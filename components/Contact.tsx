@@ -82,7 +82,7 @@ export const Contact = () => {
                 {[
                   { label: "Reach out via", val: "+91 9981298922", link: "tel:+919981298922", icon: <Phone size={20} /> },
                   { label: "Write to me at", val: "pariharvinaytaurush@gmail.com", link: "mailto:pariharvinaytaurush@gmail.com", icon: <Mail size={20} /> },
-                  { label: "Home Base", val: "Bangalore, India", link: null, icon: <Sparkles size={20} /> }
+                  { label: "Home Base", val: "Biskhan Betul, MP | Bangalore", link: null, icon: <Sparkles size={20} /> }
                 ].map((item, idx) => (
                   <li key={idx} className="flex flex-col gap-3 group">
                     <span className="text-[10px] font-bold tracking-[0.4em] text-primary-600 uppercase flex items-center gap-2">
