@@ -12,7 +12,7 @@ export const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="space-y-12">
             <div className="space-y-6">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 className="flex items-center gap-3 text-primary-600 mb-4"
@@ -56,11 +56,11 @@ export const Contact = () => {
                 { icon: <Github size={32} />, link: "https://github.com/vinayparihar26", label: "GitHub" },
                 { icon: <Mail size={32} />, link: "mailto:pariharvinaytaurush@gmail.com", label: "Email" }
               ].map((social, i) => (
-                <motion.a 
+                <motion.a
                   key={i}
-                  whileHover={{ scale: 1.3, rotate: 5, y: -10 }} 
-                  href={social.link} 
-                  target="_blank" 
+                  whileHover={{ scale: 1.3, rotate: 5, y: -10 }}
+                  href={social.link}
+                  target="_blank"
                   className="text-slate-400 dark:text-slate-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-500 flex flex-col items-center gap-2"
                 >
                   {social.icon}
@@ -86,7 +86,7 @@ export const Contact = () => {
                 ].map((item, idx) => (
                   <li key={idx} className="flex flex-col gap-3 group">
                     <span className="text-[10px] font-bold tracking-[0.4em] text-primary-600 uppercase flex items-center gap-2">
-                       {item.label}
+                      {item.label}
                     </span>
                     {item.link ? (
                       <a href={item.link} className="font-bold text-slate-950 dark:text-white text-2xl hover:text-primary-600 dark:hover:text-primary-400 flex items-center justify-between transition-all duration-700 group-hover:translate-x-2 font-playfair tracking-tight">
@@ -111,7 +111,7 @@ export const Contact = () => {
 
       <footer className="mt-48 pt-20 border-t border-primary/5 text-center relative z-10 pb-20">
         <div className="container mx-auto px-6">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-primary-600/60 text-[10px] font-bold tracking-[0.6em] uppercase"
@@ -119,9 +119,9 @@ export const Contact = () => {
             Vinay Parihar | Matrimonial Portfolio &copy; 2026
           </motion.p>
           <div className="mt-8 flex justify-center gap-3">
-             {[1, 2, 3].map((_, i) => (
-               <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/20" />
-             ))}
+            {[1, 2, 3].map((_, i) => (
+              <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/20" />
+            ))}
           </div>
         </div>
       </footer>
