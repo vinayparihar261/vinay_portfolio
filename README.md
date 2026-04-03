@@ -1,43 +1,51 @@
-# Aman Gupta | Marriage Portfolio
+# Vinay Parihar | Premium Marriage Portfolio
 
-A premium, modern marriage portfolio website built with Next.js, Tailwind CSS, and Framer Motion. 
+A modern, high-end marriage portfolio website showcasing the personality, professional journey, and cultural roots of Vinay Parihar. Built with a focus on premium aesthetics, emotional storytelling, and perfect performance.
 
-## Features
-- Fully mobile responsive
-- Premium UI with glassmorphism and smooth gradients
-- Framer Motion animations (scroll-based, hover effects, page reveals)
-- Dark mode support
-- SEO friendly structure
+## 🌟 Key Features
+- **Premium Design System**: A bespoke "Ivory & Gold" theme that feels elegant and sophisticated.
+- **Full Dark Mode Support**: 100% accessible and visually stunning in both light and dark themes.
+- **Narrative Storytelling**: Sections for Life Story, Professional Arc (Flutter Development), Lifestyle, and Family Foundations.
+- **Smooth Performance**: Optimized with `will-change` properties and simplified animations for 60FPS scrolling.
+- **Responsive Layout**: Designed for perfect viewing on mobile, tablets, and high-resolution desktops.
 
-## Tech Stack
-- **Next.js 14** (App Router)
-- **Tailwind CSS** (Styling)
-- **Framer Motion** (Animations)
-- **Lucide React** (Icons)
+## 🛠 Tech Stack
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Typography**: Playfair Display (Serif) & Inter (Sans-serif)
 
-## Getting Started
+## 📁 Project Structure
+- `/app`: Main application layout, theme provider, and root page.
+- `/components`: Modular sections including:
+  - `Hero`: Premium landing with floating elements.
+  - `About`: Personal details and "Rooted in Biskhan Betul, MP" narrative.
+  - `Career`: Education and Professional experience (Flutter/Java).
+  - `Lifestyle`: Hobbies and personal values.
+  - `Family`: Heritage and foundation tree.
+  - `Expectations`: Shared vision and partnership values.
+  - `Contact`: Digital Call-Card and WhatsApp integration.
+- `/public`: Assets (high-quality images and PDF biodata).
 
-1. **Install dependencies:**
+## 🚀 Getting Started
+
+1. **Clone and Install:**
    ```bash
+   git clone https://github.com/vinayparihar261/vinay_portfolio.git
+   cd vinay_portfolio
    npm install
    ```
-   *Note: If you are running this in a new environment, ensure Node.js is installed.*
 
-2. **Run the development server:**
+2. **Run Locally:**
    ```bash
    npm run dev
    ```
+   Open [http://localhost:3000](http://localhost:3000) to view the live portfolio.
 
-3. **Open the browser:**
-   Open [http://localhost:3000](http://localhost:3000) to view your portfolio.
+## 📸 Personalization
+- **Photos**: Place high-resolution portraits in `/public/img/` (vinay-1.jpg, vinay-2.jpg, etc.).
+- **Biodata**: Add your final PDF to `/public/docs/vinay-parihar-biodata.pdf` for the download button to work.
 
-## Folder Structure
-- `/app`: Main application layout and root page
-- `/components`: Modular sections of the portfolio (Hero, About, Career, etc.)
-- `/public`: Assets like images and icons (you should place your photos here)
-- `tailwind.config.ts`: Custom theme settings including glassmorphism tokens
-
-## Personalization
-- Replace the images in the `About` and `Lifestyle` sections with your own photos.
-- Update the text content in each component to reflect your true personality and story.
-- Customize the colors and themes in `tailwind.config.ts`.
+---
+*Built with care by Vinay Parihar - 2026*
