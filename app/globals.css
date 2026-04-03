@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 254 252 240; /* Ivory #fefcf0 */
+  --foreground: 45 42 38;    /* Warm Charcoal #2d2a26 */
+  --primary: 212 175 55;    /* Gold #d4af37 */
+}
+
+.dark {
+  --background: 26 26 26;    /* Deep Charcoal */
+  --foreground: 236 226 211; /* Bone White #ece2d3 */
+  --primary: 197 160 89;     /* Deep Gold */
+}
+
+body {
+  @apply bg-background text-foreground transition-colors duration-700 overflow-x-hidden scroll-smooth selection:bg-primary/20;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-playfair), serif;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 dark:bg-black/40 backdrop-blur-xl border-b border-primary/10 dark:border-primary/20 shadow-xl will-change-transform;
+  }
+  
+  .glass-card {
+    @apply bg-white/60 dark:bg-black/30 backdrop-blur-md border border-primary/20 dark:border-primary/10 shadow-2xl transition-all duration-500 hover:border-primary/50 will-change-transform;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-primary-600 via-primary-500 to-primary-700;
+  }
+
+  .card-hover {
+    @apply transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] dark:hover:shadow-[0_20px_50px_rgba(59,_130,_246,_0.1)];
+  }
+}
+
+/* Premium Animated Background Blobs */
+.bg-blob {
+  @apply absolute rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-[120px] animate-pulse opacity-20 dark:opacity-10 will-change-[transform,opacity];
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full border-4 border-solid border-transparent bg-clip-padding hover:bg-primary/50 transition-all;
+}
+
+::selection {
+  @apply bg-primary/20 text-primary-900 dark:text-primary-100;
+}
+
+
