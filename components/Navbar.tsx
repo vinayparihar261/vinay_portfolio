@@ -1,13 +1,13 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Sun, Moon, Menu, X, ArrowRight, Sparkles } from "lucide-react";
+import { Sun, Moon, Menu, X, Sparkles } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled 
-        ? "py-4 bg-white/80 dark:bg-black/80 backdrop-blur-2xl border-b border-primary/10 shadow-2xl" 
+        ? "py-4 bg-white/75 dark:bg-slate-950/80 backdrop-blur-2xl border-b border-primary/20 shadow-2xl" 
         : "py-8 bg-transparent"
       }`}
     >
@@ -42,7 +42,9 @@ export const Navbar = () => {
           href="#"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-3xl font-bold font-playfair tracking-tighter text-slate-900 dark:text-white flex items-center gap-2 group"
+          className={`text-3xl font-bold font-playfair tracking-tighter flex items-center gap-2 group ${
+            scrolled ? "text-slate-900 dark:text-white" : "text-slate-100"
+          }`}
         >
           <Sparkles className="text-primary-500 group-hover:rotate-12 transition-transform" size={24} />
           <span>Vinay Parihar</span>
@@ -60,7 +62,11 @@ export const Navbar = () => {
               >
                 <a 
                   href={link.href} 
-                  className="text-[11px] font-bold tracking-[0.3em] uppercase text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-500 relative group"
+                  className={`text-[11px] font-bold tracking-[0.3em] uppercase transition-all duration-500 relative group ${
+                    scrolled
+                      ? "text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400"
+                      : "text-slate-200 hover:text-primary-200"
+                  }`}
                 >
                   {link.name}
                   <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary-500 transition-all duration-500 group-hover:w-full" />
@@ -73,7 +79,9 @@ export const Navbar = () => {
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="relative w-12 h-12 flex items-center justify-center rounded-2xl bg-white/50 border border-primary/10 overflow-hidden shadow-xl"
+            className={`relative w-12 h-12 flex items-center justify-center rounded-2xl border overflow-hidden shadow-xl ${
+              scrolled ? "bg-white/50 border-primary/20" : "bg-white/10 border-primary/40"
+            }`}
           >
             <AnimatePresence mode="wait">
               <motion.div
@@ -97,14 +105,18 @@ export const Navbar = () => {
         <div className="flex md:hidden items-center gap-4">
           <button 
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/50 border border-primary/10"
+            className={`w-10 h-10 flex items-center justify-center rounded-xl border ${
+              scrolled ? "bg-white/50 border-primary/20" : "bg-white/10 border-primary/40 text-white"
+            }`}
           >
             {resolvedTheme === "dark" ? <Sun className="w-4 h-4 text-amber-500" /> : <Moon className="w-4 h-4 text-slate-800" />}
           </button>
           
           <button 
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/50 border border-primary/10"
+            className={`w-10 h-10 flex items-center justify-center rounded-xl border ${
+              scrolled ? "bg-white/50 border-primary/20" : "bg-white/10 border-primary/40 text-white"
+            }`}
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

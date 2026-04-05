@@ -13,32 +13,31 @@ export const Hero = () => {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.5 } }
           }}
-          className="text-left order-2 lg:order-1"
+          className="text-left order-2 lg:order-1 bg-white/35 dark:bg-slate-900/35 backdrop-blur-md border border-primary/20 rounded-[3rem] p-8 md:p-10 shadow-[0_30px_60px_rgba(20,34,64,0.15)]"
         >
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 }
-            }}
-            className="mb-10 inline-flex items-center gap-3 py-2.5 px-8 glass rounded-full border border-primary/20 bg-primary-50/50"
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-            </span>
-            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-primary-800 dark:text-primary-200">
-              Welcome to my journey
-            </span>
-          </motion.div>
+          <div className="mb-8 flex flex-wrap items-center gap-3">
+            {["2026", "Wedding Portfolio"].map((item) => (
+              <motion.span
+                key={item}
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0 }
+                }}
+                className="inline-flex items-center gap-2 py-2 px-5 rounded-full border border-primary/35 bg-white/45 dark:bg-slate-950/35 text-[11px] font-semibold tracking-[0.24em] uppercase text-primary-800 dark:text-primary-200"
+              >
+                {item}
+              </motion.span>
+            ))}
+          </div>
 
           <motion.h1 
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 }
             }}
-            className="font-playfair text-7xl md:text-[8rem] lg:text-[10rem] font-bold mb-10 tracking-tight leading-[0.85] flex flex-col"
+            className="font-playfair text-6xl md:text-[7rem] lg:text-[8.5rem] font-bold mb-10 tracking-tight leading-[0.88] flex flex-col"
           >
-            <span className="text-slate-900 dark:text-white border-b-4 border-primary/20 w-fit pb-2">Vinay</span>
+            <span className="text-slate-900 dark:text-white border-b-4 border-primary/30 w-fit pb-2">Vinay</span>
             <span className="gradient-text italic opacity-90">Parihar</span>
           </motion.h1>
 
@@ -47,7 +46,7 @@ export const Hero = () => {
               hidden: { opacity: 0 },
               visible: { opacity: 1 }
             }}
-            className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-light leading-relaxed mb-14 max-w-2xl font-serif italic"
+            className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 font-light leading-relaxed mb-12 max-w-2xl font-serif italic"
           >
             "A balance of <span className="text-primary-700 dark:text-primary-400 font-semibold">innovation</span> and <span className="text-primary-700 dark:text-primary-400 font-semibold">tradition</span>, dedicated to a life of growth, empathy, and shared joy."
           </motion.p>
@@ -112,8 +111,8 @@ export const Hero = () => {
             </motion.div>
             
             {/* Elegant Accents */}
-            <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-primary/10 rounded-full blur-[100px] animate-pulse" />
-            <div className="absolute -top-16 -left-16 w-48 h-48 bg-rose-200/20 rounded-full blur-[100px]" />
+            <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
+            <div className="absolute -top-16 -left-16 w-48 h-48 bg-sky-100/30 dark:bg-sky-900/20 rounded-full blur-[100px]" />
             
             <motion.div
               animate={{ rotate: 360 }}
@@ -128,5 +127,4 @@ export const Hero = () => {
     </section>
   );
 };
-
 

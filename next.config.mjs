@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig = {
-  output: 'export',
+  output: "export",
   images: {
     unoptimized: true,
   },
-  basePath: '/vinay_portfolio',
+  basePath: isProd ? "/vinay_portfolio" : "",
+  assetPrefix: isProd ? "/vinay_portfolio/" : "",
 };
 
 export default nextConfig;
